@@ -14,7 +14,13 @@ def main():
                 if char.isalpha():
                     lettercount += 1
                     letter_totals.append(char)
+                    for letter in letter_totals:
+                        if letter = "a":
+                            
+            print(letter_totals)
             print(lettercount)
+
+            
 
     except FileNotFoundError:
         print("The file 'books/frankenstein.txt' was not found. Please check the path and try again." )
