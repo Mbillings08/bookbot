@@ -1,5 +1,7 @@
 def main():
     file_contents = ""
+    a_count = 0
+    b_count = 0
     try:
         with open("books/frankenstein.txt") as f:
             file_contents = f.read()
@@ -15,10 +17,16 @@ def main():
                     lettercount += 1
                     letter_totals.append(char)
                     for letter in letter_totals:
-                        if letter = "a":
+                        if letter == "a":
+                            a_count += 1
+                        if letter == "b":
+                            b_count += 1
+
                             
             print(letter_totals)
             print(lettercount)
+            print(f"A count: {a_count}")
+            print(f"A count: {b_count}")
 
             
 
