@@ -128,6 +128,7 @@ def main():
                 print(f"X count: {x_count}")
                 print(f"Y count: {y_count}")
                 print(f"Z count: {z_count}")
+                print(f"Space count: {space_count}")
                 print(f"total unknown characters: {unknown_count}")
 
     except FileNotFoundError:
