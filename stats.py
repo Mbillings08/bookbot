@@ -5,9 +5,11 @@ def get_num_words():
             file_contents = f.read()
             words = file_contents.split()
             wordcount = len(words)
-            print(f"Total number of words: {wordcount}")
+            print(f"{wordcount} words found in the document")
+
     except FileNotFoundError:
         print("The file 'books/frankenstein.txt' was not found. Please check the path and try again." )
     except Exception as e:
         print(f"An error occured: {e}")
+
 get_num_words()
