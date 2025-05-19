@@ -16,10 +16,12 @@ get_num_words()
 
 
 def get_char_count():
-    t = 0
-    p = 0
-    c = 0
+    
     characters = []
+    lower_characters = []
+    results = []
+    a_count = 0
+    b_count = 0
     try:
         with open("books/frankenstein.txt") as l:
             for line in l:
@@ -27,16 +29,24 @@ def get_char_count():
                     characters.append(char)
         for letter in characters:
             lower_letter = letter.lower()
-            if lower_letter == "t":
-                t += 1
-            if lower_letter == "p":
-                p += 1
-            if lower_letter == "c":
-                c += 1
-        #print(characters)
-        print(f"'t': {t}")
-        print(f"'p': {p}")
-        print(f"'c': {c}")
+            lower_is_alpha = lower_letter.isalpha()
+            if lower_is_alpha is True:
+                lower_characters.append(lower_letter)
+
+        for l in lower_characters:
+            if l == "a":
+                a_count += 1
+            if l == "b":
+                b_count += 1
+        print(a_count, b_count)
+            #results + [f"{l}: {l_count}"]
+        
+        
+        #print(results)
+
+                
+                
+        
                 
 
             
