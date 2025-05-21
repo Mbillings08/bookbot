@@ -39,6 +39,7 @@ def get_char_count():
             if l == "b":
                 b_count += 1
         print(a_count, b_count)
+        
             #results + [f"{l}: {l_count}"]
         
         
