@@ -19,27 +19,39 @@ def get_char_count():
     
     characters = []
     lower_characters = []
+    unique_characters = []
     results = []
     a_count = 0
     b_count = 0
     try:
+        #open file and turn each character into list
         with open("books/frankenstein.txt") as l:
             for line in l:
                 for char in line:
                     characters.append(char)
+
+        #Turn list of characters all lower case
         for letter in characters:
             lower_letter = letter.lower()
             lower_is_alpha = lower_letter.isalpha()
             if lower_is_alpha is True:
                 lower_characters.append(lower_letter)
 
+        #get unique characters
+        for lower_character in lower_characters:
+            if lower_character not in unique_characters:
+                unique_characters.append(lower_character)
+        print(unique_characters)
+
+        #get counts for each unique character
+        
         for l in lower_characters:
             if l == "a":
                 a_count += 1
             if l == "b":
                 b_count += 1
         print(a_count, b_count)
-        
+
             #results + [f"{l}: {l_count}"]
         
         
