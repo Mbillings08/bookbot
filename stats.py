@@ -1,15 +1,17 @@
 def get_num_words():
+    import sys
+    book_filepath = sys.argv[1]
     print("--------- Word Count -------")
     try:
         
-        with open("books/frankenstein.txt") as f:
+        with open(book_filepath) as f:
             file_contents = f.read()
             words = file_contents.split()
             wordcount = len(words)
             print(f"Found {wordcount} total words")
 
     except FileNotFoundError:
-        print("The file 'books/frankenstein.txt' was not found. Please check the path and try again." )
+        print(f"The file '{book_filepath}' was not found. Please check the path and try again." )
     except Exception as e:
         print(f"An error occured: {e}")
 
@@ -17,7 +19,8 @@ get_num_words()
 
 
 def get_char_count():
-    
+    import sys
+    book_filepath = sys.argv[1]
     characters = []
     lower_characters = []
     unique_characters = []
@@ -27,7 +30,7 @@ def get_char_count():
     try:
         
         #open file and turn each character into list
-        with open("books/frankenstein.txt") as l:
+        with open(book_filepath) as l:
             for line in l:
                 for char in line:
                     characters.append(char)
@@ -59,7 +62,7 @@ def get_char_count():
             print(f"'{value}: {sorted_dict[value]}") 
 
     except FileNotFoundError:
-        print("The file 'books/frankenstein.txt' was not found. Please check the path and try again." )
+        print(f"The file '{book_filepath}' was not found. Please check the path and try again." )
     except Exception as e:
         print(f"An error occured: {e}")       
 get_char_count()
